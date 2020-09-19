@@ -13,7 +13,7 @@ namespace LeadManagement.Data.Models
         /// <summary>
         /// Gets or sets the Id of the suburb
         /// </summary>
-        public int Id { get; set; }
+        public uint Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the suburb

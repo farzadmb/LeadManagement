@@ -10,7 +10,7 @@ namespace LeadManagement.Domain
         /// <summary>
         /// Gets the Id of the job
         /// </summary>
-        public int Id { get; private set; }
+        public uint Id { get; private set; }
 
         /// <summary>
         /// Gets the suburb of the job
@@ -76,7 +76,7 @@ namespace LeadManagement.Domain
         /// The status of the job
         /// </param>
         public Job(
-            int id,
+            uint id,
             Suburb suburb,
             Contact contact,
             Category category,

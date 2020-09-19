@@ -10,7 +10,7 @@
         /// <summary>
         /// Gets the Id of the suburb
         /// </summary>
-        public int Id { get; private set; }
+        public uint Id { get; private set; }
 
         /// <summary>
         /// Gets the name of the suburb
@@ -22,8 +22,7 @@
         #region Construction
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Category"/> class. 
-        /// 
+        /// Initializes a new instance of the <see cref="Category"/> class.
         /// </summary>
         /// <param name="id">
         /// The Id of category
@@ -31,7 +30,7 @@
         /// <param name="name">
         /// The name of category
         /// </param>
-        public Category(int id, string name)
+        public Category(uint id, string name)
         {
             Id = id;
             Name = name;

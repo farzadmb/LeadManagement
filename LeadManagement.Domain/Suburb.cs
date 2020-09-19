@@ -10,7 +10,7 @@
         /// <summary>
         /// Gets the Id of the suburb
         /// </summary>
-        public int Id { get; private set; }
+        public uint Id { get; private set; }
 
         /// <summary>
         /// Gets the name of the suburb
@@ -38,7 +38,7 @@
         /// <param name="postCode">
         /// The post code
         /// </param>
-        public Suburb(int id, string name, string postCode)
+        public Suburb(uint id, string name, string postCode)
         {
             Id = id;
             Name = name;
