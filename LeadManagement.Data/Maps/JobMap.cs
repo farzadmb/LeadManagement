@@ -26,6 +26,9 @@ namespace LeadManagement.Data.Maps
             entityBuilder.Property(j => j.Time).HasColumnName("created_at");
             entityBuilder.Property(j => j.Price).HasColumnName("price");
             entityBuilder.Property(j => j.Status).HasColumnName("status");
+
+            entityBuilder.HasOne(j => j.SuburbModel).WithMany(sm => sm.JobModels).HasForeignKey(j => j.SuburbId);
+            entityBuilder.HasOne(j => j.CategoryModel).WithMany(sm => sm.JobModels).HasForeignKey(j => j.CategoryId);
         }
 
         #endregion

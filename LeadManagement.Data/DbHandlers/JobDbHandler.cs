@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using LeadManagement.Data.Extensions;
 using LeadManagement.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace LeadManagement.Data.DbHandlers
 {
@@ -35,11 +37,9 @@ namespace LeadManagement.Data.DbHandlers
 
         public async Task<IEnumerable<Job>> GetAllJobs()
         {
-            var jobs = this.leadDbContext.JobModels;
-            var suburbs = this.leadDbContext.SuburbModels;
-            var categories = this.leadDbContext.CategoryModels;
+            var jobs = this.leadDbContext.JobModels.Include("Category").Include("Suburb").ToList();
 
-            return await Task.FromResult(jobs.ToJob(suburbs, categories));
+            return await Task.FromResult(jobs.ToJob());
         }
 
         #endregion

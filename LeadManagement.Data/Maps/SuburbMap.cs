@@ -25,6 +25,8 @@ namespace LeadManagement.Data.Maps
             entityBuilder.Property(a => a.Id).HasColumnName("id");
             entityBuilder.Property(a => a.Name).HasColumnName("name");
             entityBuilder.Property(a => a.PostCode).HasColumnName("postcode");
+
+            entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.SuburbModel);
         }
 
         #endregion

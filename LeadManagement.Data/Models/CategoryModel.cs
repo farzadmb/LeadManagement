@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LeadManagement.Data.Models
 {
@@ -18,6 +19,12 @@ namespace LeadManagement.Data.Models
         /// Gets or sets the name of the suburb
         /// </summary>
         public string Name { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the job models of the category
+        /// </summary>
+        public IEnumerable<JobModel> JobModels { get; set; }
 
         #endregion
     }

@@ -1,4 +1,7 @@
-﻿namespace LeadManagement.Data.Models
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LeadManagement.Data.Models
 {
     public class SuburbModel
     {
@@ -7,7 +10,7 @@
         /// <summary>
         /// Gets or sets the Id of the suburb
         /// </summary>
-        public int Id { get; set; }
+        public uint Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the suburb
@@ -18,6 +21,11 @@
         /// Gets or sets the post code of the suburb
         /// </summary>
         public string PostCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the job models of the suburb
+        /// </summary>
+        public IEnumerable<JobModel> JobModels { get; set; }
 
         #endregion
     }
