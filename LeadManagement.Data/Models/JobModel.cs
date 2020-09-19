@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LeadManagement.Data.Models
 {
@@ -18,6 +19,21 @@ namespace LeadManagement.Data.Models
         /// Gets or sets the suburb of the job
         /// </summary>
         public uint SuburbId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the contact
+        /// </summary>
+        public string ContactName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the phone of the contact
+        /// </summary>
+        public string ContactPhone { get; set; }
+
+        /// <summary>
+        /// Gets or sets the email of the contact
+        /// </summary>
+        public string ContactEmail { get; set; }
 
         /// <summary>
         /// Gets or sets the category of the job

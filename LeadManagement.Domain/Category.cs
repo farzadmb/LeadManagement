@@ -17,20 +17,24 @@
         /// </summary>
         public string Name { get; private set; }
 
-        /// <summary>
-        /// Gets the parent category
-        /// </summary>
-        public Category ParentCategory { get; private set; }
-
         #endregion
 
         #region Construction
 
-        public Category(int id, string name, Category parentCategory)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Category"/> class. 
+        /// 
+        /// </summary>
+        /// <param name="id">
+        /// The Id of category
+        /// </param>
+        /// <param name="name">
+        /// The name of category
+        /// </param>
+        public Category(int id, string name)
         {
             Id = id;
             Name = name;
-            ParentCategory = parentCategory;
         }
 
         #endregion

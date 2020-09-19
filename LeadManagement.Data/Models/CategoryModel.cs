@@ -1,4 +1,6 @@
-﻿namespace LeadManagement.Data.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LeadManagement.Data.Models
 {
     /// <summary>
     /// The model for category
@@ -16,11 +18,6 @@
         /// Gets or sets the name of the suburb
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the parent category
-        /// </summary>
-        public uint ParentCategory { get; set; }
 
         #endregion
     }

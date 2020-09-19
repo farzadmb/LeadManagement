@@ -17,6 +17,8 @@ namespace LeadManagement.Domain
         /// </summary>
         public Suburb Suburb { get; private set; }
 
+        public Contact Contact { get; private set; }
+
         /// <summary>
         /// Gets the category of the job
         /// </summary>
@@ -55,6 +57,9 @@ namespace LeadManagement.Domain
         /// <param name="suburb">
         /// The suburb
         /// </param>
+        /// <param name="contact">
+        /// The contact.
+        /// </param>
         /// <param name="category">
         /// The category
         /// </param>
@@ -73,6 +78,7 @@ namespace LeadManagement.Domain
         public Job(
             int id,
             Suburb suburb,
+            Contact contact,
             Category category,
             string description,
             DateTime time,
@@ -81,6 +87,7 @@ namespace LeadManagement.Domain
         {
             Id = id;
             Suburb = suburb;
+            Contact = contact;
             Category = category;
             Description = description;
             Time = time;
