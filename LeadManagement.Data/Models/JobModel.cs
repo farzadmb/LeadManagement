@@ -18,7 +18,7 @@ namespace LeadManagement.Data.Models
         /// <summary>
         /// Gets or sets the suburb of the job
         /// </summary>
-        public SuburbModel SuburbModel { get; set; }
+        public SuburbModel Suburb { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the contact
@@ -38,7 +38,7 @@ namespace LeadManagement.Data.Models
         /// <summary>
         /// Gets or sets the category of the job
         /// </summary>
-        public CategoryModel CategoryModel { get; set; }
+        public CategoryModel Category { get; set; }
 
         /// <summary>
         /// Gets or sets the description of the job
@@ -60,10 +60,10 @@ namespace LeadManagement.Data.Models
         /// </summary>
         public string Status { get; set; }
 
-        [ForeignKey("Suburb")]
+        [ForeignKey(nameof(Suburb))]
         public uint SuburbId { get; set; }
 
-        [ForeignKey("Category")]
+        [ForeignKey(nameof(Category))]
         public uint CategoryId { get; set; }
 
         #endregion

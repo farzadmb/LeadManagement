@@ -1,4 +1,6 @@
-﻿using LeadManagement.Data.Models;
+﻿using System.Collections.Generic;
+
+using LeadManagement.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -27,8 +29,24 @@ namespace LeadManagement.Data.Maps
             entityBuilder.Property(j => j.Price).HasColumnName("price");
             entityBuilder.Property(j => j.Status).HasColumnName("status");
 
-            entityBuilder.HasOne(j => j.SuburbModel).WithMany(sm => sm.JobModels).HasForeignKey(j => j.SuburbId);
-            entityBuilder.HasOne(j => j.CategoryModel).WithMany(sm => sm.JobModels).HasForeignKey(j => j.CategoryId);
+            entityBuilder.HasOne(j => j.Suburb).WithMany(sm => sm.JobModels).HasForeignKey(j => j.SuburbId);
+            entityBuilder.HasOne(j => j.Category).WithMany(sm => sm.JobModels).HasForeignKey(j => j.CategoryId);
+
+            entityBuilder.HasData(
+                new List<JobModel>()
+                    {
+                        new JobModel()
+                            {
+                                Id = 11,
+                                ContactName = "Fred",
+                                ContactEmail = "fred.momeni@gmail.com",
+                                Status = "NEW",
+                                Price = 10,
+                                Description = "TEST",
+                                CategoryId = 1,
+                                SuburbId = 21
+                            }
+                    });
         }
 
         #endregion

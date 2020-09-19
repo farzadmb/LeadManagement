@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LeadManagement.Data\LeadManagement.Data.csproj" />
     <ProjectReference Include="..\LeadManagement.Domain\LeadManagement.Domain.csproj" />
   </ItemGroup>

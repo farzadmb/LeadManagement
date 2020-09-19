@@ -25,14 +25,19 @@ namespace LeadManagement.Data.Extensions
         /// </returns>
         public static Job ToJob(this JobModel jobModel)
         {
+            if (jobModel == null)
+            {
+                return null;
+            }
+
             var contact = new Contact(jobModel.ContactName, jobModel.ContactPhone, jobModel.ContactEmail);
-            var jobStatus = Enum.TryParse<Status>(jobModel.Status, out var status) ? status : Status.New;
+            var jobStatus = Enum.TryParse<Status>(jobModel.Status, true, out var status) ? status : Status.New;
 
             return new Job(
                 jobModel.Id,
-                jobModel.SuburbModel.ToSuburb(),
+                jobModel.Suburb.ToSuburb(),
                 contact,
-                jobModel.CategoryModel.ToCategory(),
+                jobModel.Category.ToCategory(),
                 jobModel.Description,
                 jobModel.Time,
                 jobModel.Price,

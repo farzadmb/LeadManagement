@@ -1,8 +1,7 @@
 ﻿using LeadManagement.Application;
 using LeadManagement.Data;
 using LeadManagement.Data.DbHandlers;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LeadManagement.Api.Extensions
@@ -11,17 +10,9 @@ namespace LeadManagement.Api.Extensions
     {
         #region Public Methods
 
-        public static void AddMySqlConfigs(this IServiceCollection services, IConfiguration configuration)
+        public static void AddSqLiteConfigs(this IServiceCollection services)
         {
-            var host = configuration["DbHost"] ?? "localhost";
-            var port = configuration["dbPort"] ?? "3306";
-            var database = configuration["dbName"] = "hipages";
-            var userId = configuration["dbUsername"] = "root";
-            var password = configuration["dbPassword"] ?? "hipages";
-
-            var connectionString = $"server={host}; userid={userId}; pwd={password}; port={port}; database={database}";
-
-            services.AddDbContext<LeadDbContext>(options => { options.UseMySql(connectionString); });
+            services.AddEntityFrameworkSqlite().AddDbContext<SqLiteDbContext>();
         }
 
         public static void AddDependencyInjections(this IServiceCollection services)

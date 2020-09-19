@@ -1,4 +1,6 @@
-﻿using LeadManagement.Data.Models;
+﻿using System.Collections.Generic;
+
+using LeadManagement.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -26,7 +28,10 @@ namespace LeadManagement.Data.Maps
             entityBuilder.Property(a => a.Name).HasColumnName("name");
             entityBuilder.Property(a => a.PostCode).HasColumnName("postcode");
 
-            entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.SuburbModel);
+            entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.Suburb);
+
+            entityBuilder.HasData(
+                new List<SuburbModel>() { new SuburbModel() { Id = 21, Name = "CBD", PostCode = "2000" } });
         }
 
         #endregion

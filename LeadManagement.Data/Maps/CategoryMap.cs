@@ -1,4 +1,6 @@
-﻿using LeadManagement.Data.Models;
+﻿using System.Collections.Generic;
+
+using LeadManagement.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -25,7 +27,9 @@ namespace LeadManagement.Data.Maps
             entityBuilder.Property(a => a.Id).HasColumnName("id");
             entityBuilder.Property(a => a.Name).HasColumnName("name");
 
-            entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.CategoryModel);
+            entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.Category);
+
+            entityBuilder.HasData(new List<CategoryModel>() { new CategoryModel() { Id = 1, Name = "Plumbing" } });
         }
 
         #endregion

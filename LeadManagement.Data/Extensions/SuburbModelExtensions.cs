@@ -21,7 +21,7 @@ namespace LeadManagement.Data.Extensions
         /// </returns>
         public static Suburb ToSuburb(this SuburbModel suburbModel)
         {
-            return new Suburb(suburbModel.Id, suburbModel.Name, suburbModel.PostCode);
+            return suburbModel == null ? null : new Suburb(suburbModel.Id, suburbModel.Name, suburbModel.PostCode);
         }
 
         #endregion

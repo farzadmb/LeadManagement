@@ -1,10 +1,11 @@
 ﻿using LeadManagement.Data.Maps;
 using LeadManagement.Data.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace LeadManagement.Data
 {
-    public class LeadDbContext : DbContext
+    public class SqLiteDbContext : DbContext
     {
         #region DbSets
 
@@ -16,7 +17,22 @@ namespace LeadManagement.Data
 
         #endregion
 
+        #region Constructor
+
+        public SqLiteDbContext()
+        {
+            Database.EnsureCreated();
+        }
+
+        #endregion
+
         #region Configurations
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=LeadManagement.db");
+            base.OnConfiguring(optionsBuilder);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -14,7 +14,7 @@ namespace LeadManagement.Data.DbHandlers
     {
         #region Fields
 
-        private readonly LeadDbContext leadDbContext;
+        private readonly SqLiteDbContext leadDbContext;
 
         #endregion
 
@@ -26,7 +26,7 @@ namespace LeadManagement.Data.DbHandlers
         /// <param name="leadDbContext">
         /// The database context
         /// </param>
-        public JobDbHandler(LeadDbContext leadDbContext)
+        public JobDbHandler(SqLiteDbContext leadDbContext)
         {
             this.leadDbContext = leadDbContext;
         }

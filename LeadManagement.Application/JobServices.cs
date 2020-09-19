@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using AutoMapper;
-
 using LeadManagement.Application.DTOs;
+using LeadManagement.Application.Extensions;
 using LeadManagement.Data.DbHandlers;
 
 namespace LeadManagement.Application
@@ -15,8 +14,6 @@ namespace LeadManagement.Application
         #region Fields
 
         private readonly IJobDbHandler jobDbHandler;
-
-        private readonly IMapper mapper;
 
         #endregion
 
@@ -28,13 +25,9 @@ namespace LeadManagement.Application
         /// <param name="jobDbHandler">
         /// the job database handler
         /// </param>
-        /// <param name="mapper">
-        /// The auto mapper.
-        /// </param>
-        public JobServices(IJobDbHandler jobDbHandler, IMapper mapper)
+        public JobServices(IJobDbHandler jobDbHandler)
         {
             this.jobDbHandler = jobDbHandler;
-            this.mapper = mapper;
         }
 
         #endregion
@@ -44,7 +37,7 @@ namespace LeadManagement.Application
         public async Task<IEnumerable<JobDto>> GetJobs()
         {
             var jobs = await this.jobDbHandler.GetAllJobs();
-            return this.mapper.Map<IEnumerable<JobDto>>(jobs);
+            return jobs.ToJobDto();
         }
 
         #endregion
