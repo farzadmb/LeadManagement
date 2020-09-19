@@ -1,4 +1,5 @@
-﻿using LeadManagement.Data.Models;
+﻿using LeadManagement.Data.Maps;
+using LeadManagement.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LeadManagement.Data
@@ -12,6 +13,19 @@ namespace LeadManagement.Data
         public DbSet<CategoryModel> CategoryModels { get; set; }
 
         public DbSet<SuburbModel> SuburbModels { get; set; }
+
+        #endregion
+
+        #region Configurations
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            new SuburbMap(modelBuilder.Entity<SuburbModel>());
+            new CategoryMap(modelBuilder.Entity<CategoryModel>());
+            new JobMap(modelBuilder.Entity<JobModel>());
+        }
 
         #endregion
     }
