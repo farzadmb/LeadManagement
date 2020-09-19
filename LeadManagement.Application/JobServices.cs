@@ -10,7 +10,7 @@ using LeadManagement.Data.DbHandlers;
 
 namespace LeadManagement.Application
 {
-    public class JobServices
+    public class JobServices : IJobServices
     {
         #region Fields
 
