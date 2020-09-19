@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  leadmanagement.api:
+    image: ${DOCKER_REGISTRY-}leadmanagementapi
+    build:
+      context: .
+      dockerfile: LeadManagement.Api/Dockerfile
+    ports:
+      - "8090:80"
+      - "8091:443"
