@@ -21,8 +21,10 @@ namespace LeadManagement.Api
         {
             services.AddSqLiteConfigs();
             services.AddDependencyInjections();
+            services.AddSwaggerConfigs();
 
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +43,13 @@ namespace LeadManagement.Api
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lead Manager");
+                });
         }
     }
 }
