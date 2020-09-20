@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Icon from '../../../../Helpers/Icon';
+
 const Location = (props) => {
     const { suburb } = props;
     
     return (
         <div>
-            -l- {suburb.name} {suburb.postCode}
+            <Icon name='location'/> {suburb.name} {suburb.postCode}
         </div>
     );
 };

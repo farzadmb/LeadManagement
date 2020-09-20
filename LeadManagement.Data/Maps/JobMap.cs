@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using LeadManagement.Data.Models;
 using Microsoft.EntityFrameworkCore;
@@ -40,11 +41,13 @@ namespace LeadManagement.Data.Maps
                                 Id = 11,
                                 ContactName = "Fred",
                                 ContactEmail = "fred.momeni@gmail.com",
+                                ContactPhone = "0434200100",
                                 Status = "NEW",
                                 Price = 10,
                                 Description = "TEST",
                                 CategoryId = 1,
-                                SuburbId = 21
+                                SuburbId = 21,
+                                Time = new DateTime(2020, 9, 20, 10, 25, 18)
                             }
                     });
         }

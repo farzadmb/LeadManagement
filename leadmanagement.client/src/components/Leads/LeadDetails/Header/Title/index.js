@@ -1,12 +1,16 @@
 import React from 'react';
+import './style.css';
+
+import DateFormatter from '../../../../Helpers/DateFormatter';
 
 const Title = (props) => {
     const { contact, time } = props;
     const { name } = contact;
 
+    console.log('time: ', time);
     return (
         <React.Fragment>
-            <div>
+            <div className='numberCircle'>
                 {name.charAt(0)}
             </div>
             <div>
@@ -14,7 +18,7 @@ const Title = (props) => {
                     {name.split(" ")[0]}
                 </div>
                 <div>
-                    {time}
+                    <DateFormatter time={time} />
                 </div>
             </div>
         </React.Fragment>
