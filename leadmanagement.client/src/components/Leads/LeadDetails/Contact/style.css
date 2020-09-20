@@ -1,0 +1,10 @@
+.contact-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-detail {
+    color: orange;
+    margin-left: 5px;
+}

@@ -4,9 +4,11 @@ import LeadDetails from '../LeadDetails';
 const LeadList = (props) => {
     const { leads } = props;
 
+    const leadList = leads.map(l => <div><LeadDetails lead={l} /></div>);
+
     return (
         <div>
-            <LeadDetails lead={leads[0]} />
+            {leadList}
         </div>
     );
 };

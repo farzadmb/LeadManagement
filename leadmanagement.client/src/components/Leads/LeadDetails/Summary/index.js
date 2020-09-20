@@ -6,10 +6,12 @@ import JobId from './JobId';
 import Price from './Price';
 import './style.css';
 
-const Summary = (props) => {    
+const Summary = (props) => {
     const { lead } = props;
-    const { id, suburb, category, price } = lead;
-    
+    const { id, suburb, category, price, status } = lead;
+
+    let priceTag = (status === 0) ? null : (<div className='summary-item'><Price price={price} /></div>);
+
     return (
         <div className='summary-list'>
             <div className='summary-item'>
@@ -21,9 +23,7 @@ const Summary = (props) => {
             <div className='summary-item'>
                 <JobId id={id} />
             </div>
-            <div className='summary-item'>
-                <Price price={price} />
-            </div>
+            {priceTag}
         </div>
     );
 };

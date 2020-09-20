@@ -29,7 +29,12 @@ namespace LeadManagement.Data.Maps
 
             entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.Category);
 
-            entityBuilder.HasData(new List<CategoryModel>() { new CategoryModel() { Id = 1, Name = "Plumbing" } });
+            entityBuilder.HasData(
+                new List<CategoryModel>()
+                    {
+                        new CategoryModel() { Id = 1, Name = "Plumbing" },
+                        new CategoryModel() { Id = 2, Name = "Computer" }
+                    });
         }
 
         #endregion

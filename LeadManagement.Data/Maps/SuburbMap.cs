@@ -31,7 +31,11 @@ namespace LeadManagement.Data.Maps
             entityBuilder.HasMany(c => c.JobModels).WithOne(j => j.Suburb);
 
             entityBuilder.HasData(
-                new List<SuburbModel>() { new SuburbModel() { Id = 21, Name = "CBD", PostCode = "2000" } });
+                new List<SuburbModel>()
+                    {
+                        new SuburbModel() { Id = 21, Name = "CBD", PostCode = "2000" },
+                        new SuburbModel() { Id = 22, Name = "North Sydney", PostCode = "2006" }
+                    });
         }
 
         #endregion

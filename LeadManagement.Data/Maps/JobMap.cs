@@ -48,6 +48,32 @@ namespace LeadManagement.Data.Maps
                                 CategoryId = 1,
                                 SuburbId = 21,
                                 Time = new DateTime(2020, 9, 20, 10, 25, 18)
+                            },
+                        new JobModel()
+                            {
+                                Id = 12,
+                                ContactName = "Alex",
+                                ContactEmail = "alex@gmail.com",
+                                ContactPhone = "0414211111",
+                                Status = "ACCEPTED",
+                                Price = 100,
+                                Description = "This job is very hard",
+                                CategoryId = 1,
+                                SuburbId = 21,
+                                Time = new DateTime(2020, 9, 19, 18, 45, 18)
+                            },
+                        new JobModel()
+                            {
+                                Id = 13,
+                                ContactName = "Nina",
+                                ContactEmail = "nina@gmail.com",
+                                ContactPhone = "0411987564",
+                                Status = "NEW",
+                                Price = 20,
+                                Description = "TEST",
+                                CategoryId = 2,
+                                SuburbId = 22,
+                                Time = new DateTime(2020, 9, 20, 10, 25, 18)
                             }
                     });
         }

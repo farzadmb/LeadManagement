@@ -10,12 +10,14 @@
 }
 
 .separator {    
-    border-top: 1px black solid ;
+    border-top: 1px gray solid ;
     opacity: 0.3;
     width: 100%;
     align-items: center;
 }
 
 .cart {
-    width: 30%;
+    width: 40%;
+    margin: 40px 5px 30px 5px;
+    background: white;
 }
