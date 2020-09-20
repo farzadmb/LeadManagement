@@ -7,7 +7,7 @@ import Action from './Actions';
 import './style.css';
 
 const LeadDetails = (props) => {
-    const { lead } = props;
+    const { lead, onStatusUpdate } = props;
 
     return (
         <div className='cart'>
@@ -24,7 +24,7 @@ const LeadDetails = (props) => {
             </div>
             <div className='separator' />
             <div className='summary-item'>
-                <Action lead={lead} />
+                <Action lead={lead} onStatusUpdate={onStatusUpdate} />
             </div>
         </div>
     );

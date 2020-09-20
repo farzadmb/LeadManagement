@@ -13,6 +13,10 @@ const Leads = (props) => {
         dispatch(actions.getAllLeads());
     }, [dispatch]);
 
+    const onStatusUpdate = (id, status) => {
+        dispatch(actions.updateLeadStatus(id, status));
+    };
+
     const generateContent = () => {
         if (isLoading) {
             return (
@@ -26,7 +30,7 @@ const Leads = (props) => {
             return null;
         }
 
-        return <LeadList leads={leads} />;
+        return <LeadList leads={leads} onStatusUpdate={onStatusUpdate} />;
     };
 
     return (

@@ -17,6 +17,21 @@ const getAllLeads = () => (
             });
     });
 
+const updateLeadStatus = (id, status) => (
+    (dispatch) => {
+        dispatch({ type: actionTypes.UPDATE_LEAD_STATUS_REQUEST });
+
+        axios.put(leadsUrl, { id, status })
+            .then(response => {
+                dispatch({ type: actionTypes.UPDATE_LEAD_STATUS_SUCCESS, id, status });
+            })
+            .catch(error => {
+                console.log('error: ', error);
+                dispatch({ type: actionTypes.UPDATE_LEAD_STATUS_FAILED, error });
+            });
+    });
+
 export {
-    getAllLeads
+    getAllLeads,
+    updateLeadStatus
 };
