@@ -22,6 +22,7 @@ namespace LeadManagement.Api
             services.AddSqLiteConfigs();
             services.AddDependencyInjections();
             services.AddSwaggerConfigs();
+            services.AddCorsConfigs();
 
             services.AddControllers();
 
@@ -36,6 +37,7 @@ namespace LeadManagement.Api
             }
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseAuthorization();
 

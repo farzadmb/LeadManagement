@@ -36,6 +36,21 @@ namespace LeadManagement.Api.Extensions
                         }));
         }
 
+        public static void AddCorsConfigs(this IServiceCollection services)
+        {
+            services.AddCors(
+                options =>
+                    {
+                        options.AddDefaultPolicy(
+                            builder =>
+                                {
+                                    builder.AllowAnyHeader()
+                                           .AllowAnyMethod()
+                                           .AllowAnyOrigin();
+                                });
+                    });
+        }
+
         #endregion
     }
 }
