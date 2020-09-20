@@ -13,6 +13,11 @@
         /// <summary>
         /// Accepted job
         /// </summary>
-        Accepted
+        Accepted,
+
+        /// <summary>
+        /// Declined job
+        /// </summary>
+        Declined
     }
 }

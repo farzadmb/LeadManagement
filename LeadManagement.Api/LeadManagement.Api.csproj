@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LeadManagement.Application\LeadManagement.Application.csproj" />
+    <ProjectReference Include="..\LeadManagement.Command\LeadManagement.Command.csproj" />
     <ProjectReference Include="..\LeadManagement.Data\LeadManagement.Data.csproj" />
   </ItemGroup>
 

@@ -96,5 +96,15 @@ namespace LeadManagement.Domain
         }
 
         #endregion
+
+        #region Actions
+
+        public void UpdateStatus(Status status)
+        {
+            System.Diagnostics.Debug.WriteLine($"Status {status}");
+            Status = status;
+        }
+
+        #endregion
     }
 }

@@ -1,4 +1,7 @@
+using System.Reflection;
 using LeadManagement.Api.Extensions;
+using LeadManagement.Command.Notifications;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +26,8 @@ namespace LeadManagement.Api
             services.AddDependencyInjections();
             services.AddSwaggerConfigs();
             services.AddCorsConfigs();
+
+            services.AddMediatR(typeof(UpdateLeadStatusCommand).GetTypeInfo().Assembly);
 
             services.AddControllers();
 
