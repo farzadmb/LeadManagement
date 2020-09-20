@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import LeadList from './LeadList';
+import Tabs from '../Tabs';
 import * as actions from './actions';
 
 const Leads = (props) => {
@@ -17,6 +18,8 @@ const Leads = (props) => {
         dispatch(actions.updateLeadStatus(id, status));
     };
 
+    const createTabContent = (leads) => (<LeadList leads={leads} onStatusUpdate={onStatusUpdate} />);
+
     const generateContent = () => {
         if (isLoading) {
             return (
@@ -30,7 +33,10 @@ const Leads = (props) => {
             return null;
         }
 
-        return <LeadList leads={leads} onStatusUpdate={onStatusUpdate} />;
+        const newTab = createTabContent(leads.filter(l => l.status === 0));
+        const processedTab = createTabContent(leads.filter(l => l.status !== 0));
+
+        return <Tabs newLeads={newTab} processedLeads={processedTab}/>
     };
 
     return (

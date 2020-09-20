@@ -5,7 +5,7 @@ const Actions = (props) => {
     const { lead, onStatusUpdate } = props;
     const { status } = lead;
 
-    if (status === 1) {
+    if (status !== 0) {
         return null;
     }
 
