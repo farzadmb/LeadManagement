@@ -1,11 +1,12 @@
 import React from 'react';
+import LeadDetails from '../LeadDetails';
 
 const LeadList = (props) => {
     const { leads } = props;
 
     return (
         <div>
-            Leads list. Count = {leads.length}
+            <LeadDetails lead={leads[0]} />
         </div>
     );
 };

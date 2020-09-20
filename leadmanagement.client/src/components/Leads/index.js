@@ -31,9 +31,6 @@ const Leads = (props) => {
 
     return (
         <React.Fragment>
-            <div>
-                Leads list
-            </div>
             {generateContent()}
         </React.Fragment>
     )
