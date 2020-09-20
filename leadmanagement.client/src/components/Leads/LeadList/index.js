@@ -4,7 +4,7 @@ import LeadDetails from '../LeadDetails';
 const LeadList = (props) => {
     const { leads } = props;
 
-    const leadList = leads.map(l => <div><LeadDetails lead={l} /></div>);
+    const leadList = leads.map(l => <div key={l.id}><LeadDetails lead={l} /></div>);
 
     return (
         <div>
