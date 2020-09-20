@@ -1,0 +1,21 @@
+.flexcontainer {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+
+.detail-items {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.separator {    
+    border-top: 1px black solid ;
+    opacity: 0.3;
+    width: 100%;
+    align-items: center;
+}
+
+.cart {
+    width: 30%;
+}

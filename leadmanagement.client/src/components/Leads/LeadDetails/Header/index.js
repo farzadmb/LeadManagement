@@ -1,17 +1,29 @@
 import React from 'react';
 
-import Title from './Title';
+import DateFormatter from '../../../Helpers/DateFormatter';
+import Avatar from '../../../Helpers/Avatar';
+import './style.css';
 
 const Header = (props) => {
     const { lead } = props;
     const { contact, time } = lead;
 
+    const { name } = contact;
+
     return (
-        <React.Fragment>
+        <div className='collection-item'>
             <div>
-                <Title contact={contact} time={time} />
+                <Avatar content={name.charAt(0)} />
             </div>
-        </React.Fragment>
+            <div>
+                <div className='contact-name'>
+                    {name.split(" ")[0]}
+                </div>
+                <div className='lead-time'>
+                    <DateFormatter time={time} />
+                </div>
+            </div>
+        </div>
     );
 };
 

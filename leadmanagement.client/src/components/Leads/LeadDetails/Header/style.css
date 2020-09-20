@@ -1,0 +1,13 @@
+.collection-item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.contact-name {
+    font-weight: bold;
+}
+
+.lead-time {
+    opacity: 0.5;   
+}

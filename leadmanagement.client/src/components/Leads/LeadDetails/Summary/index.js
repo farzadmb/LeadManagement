@@ -4,26 +4,27 @@ import Location from './Location';
 import Category from './Category';
 import JobId from './JobId';
 import Price from './Price';
+import './style.css';
 
 const Summary = (props) => {    
     const { lead } = props;
     const { id, suburb, category, price } = lead;
     
     return (
-        <React.Fragment>
-            <div>
+        <div className='summary-list'>
+            <div className='summary-item'>
                 <Location suburb={suburb} />
             </div>
-            <div>
+            <div className='summary-item'>
                 <Category category={category} />
             </div>
-            <div>
+            <div className='summary-item'>
                 <JobId id={id} />
             </div>
-            <div>
+            <div className='summary-item'>
                 <Price price={price} />
             </div>
-        </React.Fragment>
+        </div>
     );
 };
 

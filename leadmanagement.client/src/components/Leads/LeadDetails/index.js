@@ -2,18 +2,21 @@ import React from 'react';
 
 import Header from './Header';
 import Summary from './Summary';
+import './style.css';
 
 const LeadDetails = (props) => {
     const { lead } = props;
     return (
-        <React.Fragment>
-            <div>
+        <div className='cart'>
+            <div className='detail-items'>
                 <Header lead={lead} />
             </div>
-            <div>
+            <div className='separator'></div>
+            <div className='detail-items'>
                 <Summary lead={lead} />
             </div>
-        </React.Fragment>
+            <div className='separator'></div>
+        </div>
     );
 };
 
