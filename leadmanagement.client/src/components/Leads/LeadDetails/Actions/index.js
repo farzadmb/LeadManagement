@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Price from '../Price';
 import './style.css';
 
 const Actions = (props) => {
@@ -16,6 +18,9 @@ const Actions = (props) => {
             </div>
             <div>
                 <button className='deactive-button' onClick={() => onStatusUpdate(lead.id, 2)}>Decline</button>
+            </div>
+            <div>
+                <Price price={lead.price} bold />
             </div>
         </div>
     );

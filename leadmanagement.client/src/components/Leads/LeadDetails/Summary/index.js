@@ -3,7 +3,7 @@ import React from 'react';
 import Location from './Location';
 import Category from './Category';
 import JobId from './JobId';
-import Price from './Price';
+import Price from '../Price';
 import './style.css';
 
 const Summary = (props) => {
